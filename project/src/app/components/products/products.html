@@ -1,0 +1,15 @@
+<h2>პროდუქტების სია</h2>
+
+<div *ngIf="products.length === 0">
+  <p>იტვირთება...</p>
+</div>
+
+<div *ngFor="let product of products" style="border:1px solid #ccc; padding:10px; margin-bottom:10px; border-radius:5px;">
+  <h3>{{ product.title }}</h3>
+  <img [src]="product.thumbnail" alt="{{ product.title }}" width="150" style="display:block; margin-bottom:10px;" />
+  <p><strong>აღწერა:</strong> {{ product.description }}</p>
+  <p><strong>ფასი:</strong> {{ product.price.current }} {{ product.price.currency }}</p>
+  <p><strong>კატეგორია:</strong> {{ product.category.name }}</p>
+  <p><strong>რეიტინგი:</strong> {{ product.rating }}</p>
+  <p><strong>ნაკლები საქონელი:</strong> {{ product.stock }}</p>
+</div>
